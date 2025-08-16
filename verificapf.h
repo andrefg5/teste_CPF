@@ -22,7 +22,6 @@ bool verifica(char cpf[12])
                         tigual = false;
                         break;
         }
-        tigual = true;
 
         if(tigual) return 1;//finaliza se todos forem iguais
 
