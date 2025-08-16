@@ -35,7 +35,9 @@ public class Main
 
 	        if(resto2 == 10) resto2 = 0;
 
-	        return (resto1 == n[9] && resto2 == n[10]);
+	        if(resto1 == n[9] && resto2 == n[10]) tigual = true;
+
+			return tigual;
 	} 
 
 
