@@ -16,13 +16,12 @@ bool verifica(char cpf[12])
         }
 
         bool tigual = true;
-        for(int i = 0; i < 11; i++)
-        {
-                if(n[i] != n[0]) //verifica todos com o primeiro elemento
-                        tigual = false;
-                        break;
+        for(int i = 0; i < 11; i++) {
+            if(n[i] != n[0]) {
+                tigual = false;
+                break;
+            }
         }
-        tigual = true;
 
         if(tigual) return 1;//finaliza se todos forem iguais
 
@@ -35,7 +34,9 @@ bool verifica(char cpf[12])
 
         if(resto2 == 10) resto2 = 0;
 
-        return (resto1 == n[9] && resto2 == n[10]);
+        if(resto1 == n[9] && resto2 == n[10]) tigual = true;
+
+        return tigual;
 }
 
 int main()
