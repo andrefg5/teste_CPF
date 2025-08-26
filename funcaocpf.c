@@ -11,16 +11,17 @@ bool verifica(char cpf[12])
         for(int i = 0; i < 11; i++)
         {
                 if (cpf[i] < '0' || cpf[i] > '9') return false;//verifica se é nummero entre 0 e 9
-                   
+
                 n[i] = cpf[i] - '0';
         }
 
         bool tigual = true;
-        for(int i = 0; i < 11; i++) {
-            if(n[i] != n[0]) {
-                tigual = false;
-                break;
-            }
+        for(int i = 0; i < 11; i++)
+        {
+                if(n[i] != n[0]){ //verifica todos com o primeiro elemento
+                        tigual = false;
+                        break;
+                }
         }
 
         if(tigual) return 1;//finaliza se todos forem iguais
@@ -34,9 +35,8 @@ bool verifica(char cpf[12])
 
         if(resto2 == 10) resto2 = 0;
 
-        if(resto1 == n[9] && resto2 == n[10]) tigual = true;
-
-        return tigual;
+        if(resto1 != n[9]) return false;
+        if(resto2 != n[10]) return false;
 }
 
 int main()
